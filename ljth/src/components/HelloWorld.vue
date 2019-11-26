@@ -45,15 +45,15 @@
         </el-row>
         <el-row>
           <el-col :span="24">
-            <el-button type="danger" @click="p">抽取楼层</el-button>
+            <el-button type="danger" @click="dealAry">抽取楼层</el-button>
             <el-button type="danger" @click="kong">清空抽取结果</el-button>
           </el-col>
         </el-row>
       </el-col>
     </el-row>
     </div>
-    <div class="footer" style="height: 100px">
-
+    <div class="footer" style="height: 100px;line-height: 100px;">
+      <span>隆基泰和保定大区工程管理部 孙茂达</span>
     </div>
     
   </div>
@@ -66,7 +66,7 @@ export default {
     return {
       form: {
         buildingList: [
-          {            buildingNO: "",
+          { buildingNO: "",
             buildingStart: "",
             buildingEnd: ""          }
         ]
@@ -77,26 +77,12 @@ export default {
     }
   },
   methods: {
-    // p(){
-    //   let obj = this.extract();
-    //   let a = this.ary.findIndex(item =>{
-    //     return _.isEqual(obj, item)
-    //   })
-    //   if(a === -1){
-    //     this.ary.push(obj)
-    //   }else{
-    //     this.p();
-    //   }
-    // },
     dealAry(){
-        if(this.arr.length === 0){
           this.arr = JSON.parse(JSON.stringify(this.form.buildingList));
-        }else{
           let ary = this.arr.map(item => {
                                 return item.buildingNO;
                               })
-      }
-       let inde = this.getRandomNumber(ary.length - 1, 0);
+       let index = this.getRandomNumber(ary.length - 1, 0);
         this.extract(index)
     },
     extract(index) {
@@ -181,6 +167,7 @@ display: none;
 
 .footer{
   background-image: linear-gradient(to bottom, #c42c2c 0%,#efdada 100%);
-
+  text-align: center;
+  color: #fee2e2;
 }
 </style>

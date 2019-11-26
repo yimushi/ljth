@@ -39,7 +39,6 @@ html,body{
   width: 100%;
   height: 100px;
   text-align: right;
-  padding-right: 30px;
 }
  /* .gradient{
     background: -moz-linear-gradient(top, #000000 0%, #ffffff 100%);
